@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Narzędzia gitarowe</title>
+  <meta name="description" content="Darmowe narzędzia gitarowe — moje i znajomych.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f1e9;
+      --fg: #2a231d;
+      --muted: #7a6d60;
+      --line: #d9cdbd;
+      --card: #fffdf9;
+      --accent: #b5562b;
+      --accent-fg: #fffdf9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #1a1613;
+        --fg: #efe6da;
+        --muted: #a29484;
+        --line: #3a322b;
+        --card: #231e1a;
+        --accent: #e07a45;
+        --accent-fg: #1a1613;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #1a1613;
+      --fg: #efe6da;
+      --muted: #a29484;
+      --line: #3a322b;
+      --card: #231e1a;
+      --accent: #e07a45;
+      --accent-fg: #1a1613;
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 48px 16px;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+    }
+
+    /* six "strings" */
+    .strings {
+      display: grid;
+      gap: 7px;
+      width: 120px;
+      margin: 0 auto 36px;
+    }
+    .strings span {
+      display: block;
+      background: var(--line);
+      border-radius: 1px;
+    }
+    .strings span:nth-child(1) { height: 1px; }
+    .strings span:nth-child(2) { height: 1px; }
+    .strings span:nth-child(3) { height: 1.5px; }
+    .strings span:nth-child(4) { height: 2px; }
+    .strings span:nth-child(5) { height: 2.5px; }
+    .strings span:nth-child(6) { height: 3px; }
+
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(2rem, 7vw, 2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+
+    p.lead {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 34ch;
+      margin: 0 auto 40px;
+    }
+
+    nav {
+      display: grid;
+      gap: 12px;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+      color: var(--fg);
+      text-decoration: none;
+      text-align: left;
+      transition: border-color .2s, transform .2s, background .2s, color .2s;
+    }
+    nav a:hover,
+    nav a:focus-visible {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      outline: none;
+    }
+    nav a:active { transform: translateY(0); }
+
+    .label {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+    .sub {
+      display: block;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+    .arrow {
+      flex: none;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--bg);
+      color: var(--accent);
+      transition: background .2s, color .2s;
+    }
+    nav a:hover .arrow,
+    nav a:focus-visible .arrow {
+      background: var(--accent);
+      color: var(--accent-fg);
+    }
+
+    footer {
+      margin-top: 48px;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      nav a, .arrow { transition: none; }
+      nav a:hover, nav a:focus-visible { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="strings" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <h1>Narzędzia gitarowe</h1>
+    <p class="lead">
+      Moja mała kolekcja darmowych narzędzi dla gitarzystów —
+      zrobionych przeze mnie albo przez znajomych.
+    </p>
+
+    <nav aria-label="Narzędzia">
+      <a href="https://robson3999.github.io/gtuner/">
+        <span>
+          <span class="label">Strojenie</span>
+          <span class="sub">u Roberta</span>
+        </span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="https://barcol.github.io/strumming/">
+        <span>
+          <span class="label">Bicie</span>
+          <span class="sub">rytmy i wzory bicia</span>
+        </span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="https://barcol.github.io/chords/">
+        <span>
+          <span class="label">Akordy</span>
+          <span class="sub">chwyty i diagramy</span>
+        </span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </nav>
+
+    <footer>Grajcie dużo 🎸</footer>
+  </main>
+</body>
+</html>
